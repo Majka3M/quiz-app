@@ -10,8 +10,8 @@
 
     <div class="list-group">
         @foreach ($quizzes as $quiz)
-            <a href="/quizzes/{{ $quiz['id'] }}" class="list-group-item list-group-item-action">
-                <strong>{{ $quiz['title'] }}</strong> — {{ $quiz['questions'] }} pytań
+            <a href="/quizzes/{{ $quiz->id }}" class="list-group-item list-group-item-action">
+                <strong>{{ $quiz->title }}</strong> — {{ $quiz->questions_count }} pytań
             </a>
         @endforeach
     </div>
