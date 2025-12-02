@@ -25,6 +25,12 @@ class QuizController extends Controller
 
    public function check($id, Request $request)
 {
+
+     $request->validate([
+        'answers' => 'required|array',
+        'answers.*' => 'required|string'
+    ]);
+    
     $quiz = Quiz::with('questions.answers')->findOrFail($id);
 
     $userAnswers = $request->input('answers');
